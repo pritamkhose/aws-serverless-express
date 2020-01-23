@@ -1,0 +1,175 @@
+Microsoft Windows [Version 10.0.16299.98]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+E:\Code\AWS\Lambda>git clone https://github.com/pritamkhose/aws-serverless-express.git
+Cloning into 'aws-serverless-express'...
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), done.
+
+E:\Code\AWS\Lambda> cd aws-serverless-express
+
+E:\Code\AWS\Lambda\aws-serverless-express>npm init -y
+Wrote to E:\Code\AWS\Lambda\aws-serverless-express\package.json:
+
+{
+  "name": "aws-serverless-express",
+  "version": "1.0.0",
+  "description": "aws-serverless-express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pritamkhose/aws-serverless-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pritamkhose/aws-serverless-express/issues"
+  },
+  "homepage": "https://github.com/pritamkhose/aws-serverless-express#readme"
+}
+
+
+
+E:\Code\AWS\Lambda\aws-serverless-express>npm install express
+npm notice created a lockfile as package-lock.json. You should commit this file.
++ express@4.17.1
+added 50 packages from 37 contributors and audited 126 packages in 7.609s
+found 0 vulnerabilities
+
+
+E:\Code\AWS\Lambda\aws-serverless-express>npm i serverless-http
++ serverless-http@2.3.0
+added 2 packages from 44 contributors and audited 128 packages in 2.453s
+found 0 vulnerabilities
+
+
+E:\Code\AWS\Lambda\aws-serverless-express>echo hi > index.js
+
+E:\Code\AWS\Lambda\aws-serverless-express>nodemon
+[nodemon] 2.0.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node index.js`
+Listening on: 3000
+^CTerminate batch job (Y/N)? y
+
+E:\Code\AWS\Lambda\aws-serverless-express>echo hi > serverless.yml
+
+E:\Code\AWS\Lambda\aws-serverless-express>npm install -g serverless
+npm WARN deprecated superagent@3.8.3: Please note that v5.0.1+ of superagent removes User-Agent header by default, therefore you may need to add it yourself (e.g. GitHub blocks requests without a User-Agent header).  This notice will go away with v5.0.2+ once it is released.
+
+> serverless@1.61.3 postinstall E:\Code\AWS\Lambda\aws-serverless-express\node_modules\serverless
+> node ./scripts/postinstall.js
+
+
+   ┌───────────────────────────────────────────────────┐
+   │                                                   │
+   │   Serverless Framework successfully installed!    │
+   │                                                   │
+   │   To start your first project run 'serverless'.   │
+   │                                                   │
+   └───────────────────────────────────────────────────┘
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ serverless@1.61.3
+added 520 packages from 327 contributors and audited 2452 packages in 100.028s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+
+E:\Code\AWS\Lambda\aws-serverless-express>serverless version
+Framework Core: 1.61.3
+Plugin: 3.3.0
+SDK: 2.3.0
+Components Core: 1.1.2
+Components CLI: 1.4.0
+
+E:\Code\AWS\Lambda\aws-serverless-express>serverless config credentials --provider aws --key AWSAccesskeyID --secret AWSSecretAccessKey
+Serverless: Setting up AWS...
+
+
+E:\Code\AWS\Lambda\aws-serverless-express>serverless deploy
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Creating Stack...
+Serverless: Checking Stack create progress...
+........
+Serverless: Stack create finished...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service aws-serverless-express.zip file to S3 (26.37 MB)...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+..............................
+Serverless: Stack update finished...
+Service Information
+service: aws-serverless-express
+stage: dev
+region: us-east-2
+stack: aws-serverless-express-dev
+resources: 11
+api keys:
+  None
+endpoints:
+  ANY - https://sh3wxn8r22.execute-api.us-east-2.amazonaws.com/dev/
+functions:
+  app: aws-serverless-express-dev-app
+layers:
+  None
+Serverless: Run the "serverless" command to setup monitoring, troubleshooting and testing.
+
+E:\Code\AWS\Lambda\aws-serverless-express>
+
+E:\Code\AWS\Lambda\aws-serverless-express>serverless deploy
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service aws-serverless-express.zip file to S3 (720.88 KB)...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+....
+Serverless: Operation failed!
+Serverless: View the full error output: https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stack/detail?stackId=arn%3Aaws%3Acloudformation%3Aus-east-2%3A985964210512%3Astack%2Faws-serverless-express-dev%2Fbc0fd780-3df8-11ea-8f06-0a7adbd72fc8
+
+  Serverless Error ---------------------------------------
+
+  An error occurred: AppLambdaFunction - Function not found: arn:aws:lambda:us-east-2:985964210512:function:aws-serverless-express-dev-app (Service: AWSLambdaInternal; Status Code: 404; Error Code: ResourceNotFoundException; Request ID: 6d1b42ba-cb15-4bd0-b50b-84e2c7026739).
+
+  Get Support --------------------------------------------
+     Docs:          docs.serverless.com
+     Bugs:          github.com/serverless/serverless/issues
+     Issues:        forum.serverless.com
+
+  Your Environment Information ---------------------------
+     Operating System:          win32
+     Node Version:              13.3.0
+     Framework Version:         1.61.3
+     Plugin Version:            3.3.0
+     SDK Version:               2.3.0
+     Components Core Version:   1.1.2
+     Components CLI Version:    1.4.0
+
+
+E:\Code\AWS\Lambda\aws-serverless-express>serverless remove
+Serverless: Getting all objects in S3 bucket...
+Serverless: Removing objects in S3 bucket...
+Serverless: Removing Stack...
+Serverless: Checking Stack removal progress...
+.........................
+Serverless: Stack removal finished...

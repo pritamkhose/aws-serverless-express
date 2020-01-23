@@ -1,0 +1,24 @@
+{
+  "name": "aws-serverless-express",
+  "version": "1.0.0",
+  "description": "aws-serverless-express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pritamkhose/aws-serverless-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pritamkhose/aws-serverless-express/issues"
+  },
+  "homepage": "https://github.com/pritamkhose/aws-serverless-express#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless-http": "^2.3.0"
+  }
+}

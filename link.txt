@@ -1,0 +1,18 @@
+serverless config credentials --provider aws --key {AWSAccesskeyID} --secret {AWSSecretAccessKey}
+serverless deploy
+serverless remove
+
+Ref Link -
+https://bitbucket.org/blog/deploy-an-express-js-app-to-aws-lambda-using-the-serverless-framework
+
+https://serverless.com/framework/docs/providers/aws/guide/credentials/
+
+
+AWS Lambda config - 
+https://us-east-2.console.aws.amazon.com/lambda/home?region=us-east-2#/functions/
+
+
+Installation info link -
+https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
+
+https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-tools.html
