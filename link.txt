@@ -1,5 +1,15 @@
 serverless config credentials --provider aws --key {AWSAccesskeyID} --secret {AWSSecretAccessKey}
+
+https://www.youtube.com/watch?v=71cd5XerKss
+
+https://serverless.com/framework/docs/providers/aws/guide/deploying/
+
+serverless create -t aws-nodejs
+
 serverless deploy
+
+serverless deploy --stage production
+
 serverless remove
 
 Ref Link -
